@@ -14,5 +14,4 @@ def main():
     s = n % 86400 % 3600 % 60
 
     print("d=",d,":h=", z,":m=", m,":s=", s,)
-
-main()
+main() 
