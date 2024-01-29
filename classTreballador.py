@@ -1,6 +1,6 @@
 class Treballador:
 
-    def __init__(self, nom="", tipus=BASE, nomina=0.0, hores=0):
+    def __init__(self, nom="", tipus="BASE", nomina=0.0, hores=0):
         self.nomTreballador = nom
         self.tipusTreballador = tipus
         self.nominaTreballador = nomina
