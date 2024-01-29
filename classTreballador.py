@@ -1,4 +1,7 @@
 class Treballador:
+    BASE = "BASE"
+    SUBDIRECTOR = "SUBDIRECTOR"
+    DIRECTOR = "DIRECTOR"
 
     def __init__(self, nom="", tipus="BASE", nomina=0.0, hores=0):
         self.nomTreballador = nom

@@ -1,4 +1,5 @@
 from CostPersonal import calculaCostDelPersonal
+from classTreballador import Treballador
 import unittest
 
 def test_calculaCostDelPersonal(treballadors: list):

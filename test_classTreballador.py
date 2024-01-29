@@ -5,10 +5,9 @@ class TreballadorTest(unittest.TestCase):
 
     def test_nom_treballador_incorrecte(self):
         treballador_meu = Treballador()
-        excepcio_meva = self.assertRaises(Exception, lambda:
-        treballador_meu.set_nom(""))
-        self.assertEqual("El nom ha de tenir 3 o més caracters",
-        excepcio_meva.message)
+        excepcio_meva = self.assertRaises(Exception, lambda: 
+            treballador_meu.set_nom(""))
+        self.assertEqual("El nom ha de tenir 3 o més caràcters", excepcio_meva.message)
         
     def test_nom_treballador_correcte(self):
     
@@ -33,17 +32,16 @@ class TreballadorTest(unittest.TestCase):
         self.assertEqual(hores_extres, treballador.get_hores_extres(), "Els dos valors de les hores extres han de coincidir!!!")
 
     def test_tipus_treballador_incorrecte(self):
-        tipus = "No"
         treballador = Treballador()
         with self.assertRaises(Exception) as context:
-            treballador.set_tipus(tipus)
+            treballador.set_tipus_treballador("DIREKTOR")
         self.assertEqual("Tipus de treballador no vàlid", str(context.exception))
 
     def test_tipus_treballador_correcte(self):
-        tipus = "Full-time"
-        treballador = Treballador()
-        treballador.set_tipus(tipus)
-        self.assertEqual(tipus, treballador.get_tipus(), "Els dos valors del tipus han de coincidir!!!")
+        treballador_meu = Treballador("pepa",1,2500,10)
+        with self.assertRaises(Exception) as cm:
+            treballador_meu.set_tipus_treballador("DIRECTOR")
+            self.assertEqual(str(cm.exception), 'Tipus de treballador no vàlid')
 
 if __name__ == '__main__':
     unittest.main()
