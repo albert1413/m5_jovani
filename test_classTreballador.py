@@ -4,13 +4,12 @@ import unittest
 class TreballadorTest(unittest.TestCase):
 
     def test_nom_treballador_incorrecte(self):
-        treballador_meu = Treballador()
-        excepcio_meva = self.assertRaises(Exception, lambda: 
-            treballador_meu.set_nom(""))
-        self.assertEqual("El nom ha de tenir 3 o més caràcters", excepcio_meva.message)
+        treballador_meu = Treballador("pepe",1, 2000, 2)
+        with self.assertRaises(Exception) as test_meu:
+            treballador_meu.set_nom("si")
+        self.assertEqual(str(test_meu.exception), "El nom ha de tenir 3 o més caràcters")
         
     def test_nom_treballador_correcte(self):
-    
         nom_test = "Montsià"
         treballador = Treballador()
         try:
@@ -32,10 +31,10 @@ class TreballadorTest(unittest.TestCase):
         self.assertEqual(hores_extres, treballador.get_hores_extres(), "Els dos valors de les hores extres han de coincidir!!!")
 
     def test_tipus_treballador_incorrecte(self):
-        treballador = Treballador()
+        treballador_meu = Treballador()
         with self.assertRaises(Exception) as context:
-            treballador.set_tipus_treballador("DIREKTOR")
-        self.assertEqual("Tipus de treballador no vàlid", str(context.exception))
+            treballador_meu.set_tipus_treballador("DIREKTOR")
+        self.assertEqual(str(context.exception), "Tipus de treballador no vàlid")
 
     def test_tipus_treballador_correcte(self):
         treballador_meu = Treballador("pepa",1,2500,10)

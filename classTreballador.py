@@ -11,7 +11,7 @@ class Treballador:
 
     def set_nom(self, nom):
         if len(nom) < 3:
-            raise Exception("El nom ha de tenir 3 o més caracters")
+            raise Exception("El nom ha de tenir 3 o més caràcters")
         self.nomTreballador = nom
 
     def get_nom(self):
