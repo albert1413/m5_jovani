@@ -4,18 +4,17 @@ class Producte:
     
     IVA = 1.05
     
-    def costProducte(producte: Producte):
-        preu = 0
-        if(producte.tipus == Producte.AMB_IVA):
-            preu += producte.costBase*Producte.IVA
-        else:
-            preu += producte.costBase
-        return preu
-    
-    def totalFactura(llista: list):
+    def total_factura(llista):
         total = 0
         for item in llista:
-            total += costProducte(item)
+            total += Producte.cost_tax(item) if item.tipus == Producte.AMB_IVA else item.costBase
         return total
 
-    
+    def cost_tax(producte):
+        return producte.costBase * Producte.IVA
+
+    def producte_amb_iva(cls, nom, costBase):
+        return cls(nom, cls.AMB_IVA, costBase)
+
+    def producte_sense_iva(cls, nom, costBase):
+        return cls(nom, cls.SENSE_IVA, costBase)
