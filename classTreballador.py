@@ -1,4 +1,5 @@
 class Treballador:
+    #Definim els tipus de treballadors
     BASE = "BASE"
     SUBDIRECTOR = "SUBDIRECTOR"
     DIRECTOR = "DIRECTOR"
@@ -10,6 +11,7 @@ class Treballador:
         self.horesExtresTreballador = hores
 
     def set_nom(self, nom):
+        #Fiquem una condició per a que el nom tingui més de 3 caracters
         if len(nom) < 3:
             raise Exception("El nom ha de tenir 3 o més caràcters")
         self.nomTreballador = nom
@@ -30,6 +32,7 @@ class Treballador:
         return self.horesExtresTreballador
 
     def set_tipus_treballador(self, tipus):
+        #Fiquem una funció per a definir quin encarreg està fent
         if tipus in [self.DIRECTOR, self.SUBDIRECTOR, self.BASE]:
             self.tipusTreballador = tipus
         else:
