@@ -3,11 +3,11 @@ import unittest
 
 class TestProducte(unittest.TestCase):
     def test_total_factura(self):
-        llista_productes = [
+        llista = [
             Producte("Producte1", Producte.AMB_IVA, 100),
             Producte("Producte2", Producte.SENSE_IVA, 200)
         ]
-        self.assertEqual(Producte.total_factura(llista_productes), 100 * 1.05 + 200)
+        self.assertEqual(Producte.total_factura(llistas), 100 * 1.05 + 200)
 
     def test_cost_tax(self):
         producte_amb_iva = Producte("Producte1", Producte.AMB_IVA, 100)

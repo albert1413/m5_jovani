@@ -1,13 +1,12 @@
-from CostPersonal import calculaCostDelPersonal
+from CostPersonal import CostPersonal
 from classTreballador import Treballador
 import unittest
 
-def test_calculaCostDelPersonal(treballadors: list):
-    costFinal = 0
-    for treballador in treballadors:
-        if treballador.getTipusTreballador() in [Treballador.DIRECTOR,Treballador.SUBDIRECTOR]:
-            costFinal += treballador.getNomina()
-        else:
-            costFinal += treballador.getNomina() + (treballador.getHoresExtres()*20)
+class Test_CostPersonal(unittest.TestCase):
+    def test_calculaCostnohores(self):
+        treballadors = [Treballador("John", Treballador.DIRECTOR, 3000, 0)]
+        x = CostPersonal.calculaCostDelPersonal(treballadors)
+        self.assertEqual(x, CostPersonal.calculaCostDelPersonal(treballadors))
 
-    return costFinal
+if __name__ == '__main__':
+    unittest.main()

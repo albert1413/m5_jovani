@@ -42,5 +42,3 @@ class TreballadorTest(unittest.TestCase):
             treballador_meu.set_tipus_treballador("DIRECTOR")
             self.assertEqual(str(cm.exception), 'Tipus de treballador no vàlid')
 
-if __name__ == '__main__':
-    unittest.main()
