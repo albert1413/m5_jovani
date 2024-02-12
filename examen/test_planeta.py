@@ -19,9 +19,7 @@ class PlanetaTest(unittest.TestCase):
         self.assertEquals(planeta4.es_habitable(), 0)
 
     def testCalculPes(self):
-        planeta = Planeta(25, 40, 20, 9.8, 150)
-
-        assertEquals(planeta.pes_persona_en_newtons(), )
+        # assertEquals(expected, actual)
         pass
 
     def testPlanetaEquilibrat(self):

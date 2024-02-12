@@ -34,12 +34,12 @@ class Planeta:
       return 1
     else:
       return 0
+      
 
   def pes_persona_en_newtons(self, pesPersona):
     """
     Aquesta funció calculara el pes de la persona en un planeta en newtons 
     """
-    pesPersona = 
     return pesPersona * self.gravetat
   
   def planeta_equilibrat(self):
