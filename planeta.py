@@ -30,20 +30,17 @@ class Planeta:
     """
     Aquesta funció tornarà un 1 si es compleixen tres condicions i per tant, voldra dir que es habitable
     """
-    if 20 <= temperaturaMitjana <= 45 and quantitatAigua == 40 and radiacio < 25:
+    if 20 <= self.temperaturaMitjana <= 45 and self.quantitatAigua == 40 and self.radiacio < 25:
       return 1
     else:
       return 0
-    pass
-    
+      
+
   def pes_persona_en_newtons(self, pesPersona):
     """
     Aquesta funció calculara el pes de la persona en un planeta en newtons 
     """
-    x = int(input("Quant peses?(kg)"))
-    x = pesPersona * self.gravetat
-    return pesPersona
-    pass
+    return pesPersona * self.gravetat
   
   def planeta_equilibrat(self):
     """
@@ -51,9 +48,9 @@ class Planeta:
     Per fer-ho, comprovara que la quantitat d'aigua sigui igual a 
     la divisió entre distanciaSol i radiacio. 1=equilibrat i 2=No_equilibrat
     """
-    y = distanciaSol/radiacio
-    if y == quantitatAigua:
+    y = self.distanciaSol/self.radiacio
+    if y == self.quantitatAigua:
       return 1
     else:
       return 0
-    pass
+
